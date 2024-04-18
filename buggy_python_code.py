@@ -25,10 +25,11 @@ def fetch_website(urllib_version, url):
     # Import the requested version (2 or 3) of urllib
     exec(f"import urllib{urllib_version} as urllib", globals())
     # Fetch and print the requested URL
- 
+
     try:
         http = urllib.PoolManager()
-        # r = http.request('GET', url)
+        r = http.request('GET', url)
+        print(r)
     except:
         print('Exception')
 
@@ -53,7 +54,7 @@ if __name__ == '__main__':
     print("2. Code injection vulnerability:")
     print("3. Yaml deserialization vulnerability:")
     print("4. Use of assert statements vulnerability:")
-    choice  = input("Select vulnerability: ")
+    choice = input("Select vulnerability: ")
     if choice == "1":
         new_person = Person("Vickie")
         print_nametag(input("Please format your nametag: "), new_person)
