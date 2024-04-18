@@ -59,8 +59,11 @@ if __name__ == '__main__':
         new_person = Person("Vickie")
         print_nametag(input("Please format your nametag: "), new_person)
     elif choice == "2":
-        urlib_version = input("Choose version of urllib: ")
-        fetch_website(urlib_version, url="https://www.google.com")
+        urlib_version_input = input("Choose version of urllib: [2/3]")
+        if urlib_version_input == "2":
+            fetch_website("2", url="https://www.google.com")
+        else:
+            fetch_website("3", url="https://www.google.com")
     elif choice == "3":
         load_yaml(input("File name: "))
         print("Executed -ls on current folder")
