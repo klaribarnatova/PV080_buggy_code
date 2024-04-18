@@ -1,5 +1,6 @@
 import yaml
 import flask
+import docstring
 
 app = flask.Flask(__name__)
 
@@ -10,12 +11,11 @@ def index():
     url = flask.request.args.get("url")
     if version == "2":
         return fetch_website("2", url)
-    else:
-        return fetch_website("3", url)
+    return fetch_website("3", url)
 
 
 CONFIG = {"API_KEY": "771df488714111d39138eb60df756e6b"}
-class Person:
+class person:
     def __init__(self, name):
         self.name = name
 
@@ -31,8 +31,8 @@ def fetch_website(urllib_version, url):
 
     try:
         http = urllib.PoolManager()
-        r = http.request('GET', url)
-        print(r)
+        request = http.request('GET', url)
+        print(request)
     except:
         print('Exception')
 
